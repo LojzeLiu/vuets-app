@@ -8,7 +8,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import LoginHeader from "./LoginHeader.vue";
 @Component({
-  components: {}
+  components: { LoginHeader }
 })
 export default class Login extends Vue {}
 </script>
