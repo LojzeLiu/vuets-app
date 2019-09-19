@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <LoginHeader>
-      <el-form slot="container">
+      <el-form :model="ruleForm" label-position="left" label-width="0px" slot="container">
         <div class="title">
           <h3>帐号</h3>
         </div>
@@ -11,12 +11,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Provide } from "vue-property-decorator";
 import LoginHeader from "./LoginHeader.vue";
 @Component({
   components: { LoginHeader }
 })
-export default class Login extends Vue {}
+export default class Login extends Vue {
+  @Provide() ruleForm: {
+    username: String;
+    pwd: String;
+    autoLogin: boolean;
+  } = {
+    username: "",
+    pwd: "",
+    autoLogin: true //是否自动登录
+  };
+}
 </script>
 
 <style lang="scss" scoped>
