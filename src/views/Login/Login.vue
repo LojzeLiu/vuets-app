@@ -1,6 +1,12 @@
 <template>
   <div class="login">
-    <LoginHeader></LoginHeader>
+    <LoginHeader>
+      <el-form slot="container">
+        <div class="title">
+          <h3>帐号</h3>
+        </div>
+      </el-form>
+    </LoginHeader>
   </div>
 </template>
 
@@ -13,6 +19,18 @@ import LoginHeader from "./LoginHeader.vue";
 export default class Login extends Vue {}
 </script>
 
-<style lang="sass">
+<style lang="scss" scoped>
+.title {
+  margin: 0px auto 40px auto;
+  text-align: center;
+  color: #505458;
+}
 
+i {
+  font-size: 14px;
+  margin-left: 8px;
+}
+.forget {
+  float: right;
+}
 </style>
